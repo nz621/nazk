@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to Naziya's Webpage</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('bg.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .form-box {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 40px 35px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      width: 320px;
+      backdrop-filter: blur(4px);
+    }
+
+    .form-box h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #ffcc00;
+    }
+
+    .form-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .form-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .form-box button:hover {
+      background-color: #e91e63;
+    }
+
+    #message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-box">
+    <h2>Welcome to Naziya's Webpage</h2>
+    <input type="text" id="username" placeholder="Enter username">
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="login()">Login</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const message = document.getElementById('message');
+
+      if (username === "naziya" && password === "1234") {
+        message.style.color = "lightgreen";
+        message.innerText = "Login successful! Welcome Naziya!";
+      } else {
+        message.style.color = "red";
+        message.innerText = "Incorrect username or password.";
+      }
+    }
+  </script>
+
+</body>
+</html>
