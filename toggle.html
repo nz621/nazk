@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle with Sun and Moon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #fff5bc, #ffe8a3);
+      transition: background 0.6s ease;
+    }
+
+    body.dark {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    }
+
+    .toggle {
+      background: none;
+      border: none;
+      font-size: 60px;
+      cursor: pointer;
+      color: #333;
+      transition: transform 0.3s ease, color 0.4s;
+    }
+
+    body.dark .toggle {
+      color: #fff;
+    }
+
+    .toggle:active {
+      transform: scale(1.2) rotate(15deg);
+    }
+
+    .sun-icon,
+    .moon-icon {
+      display: none;
+    }
+
+    .light-mode 
+	.moon-icon {
+      display: inline;
+    }
+
+    .dark-mode .sun-icon {
+      display: inline;
+    }
+  </style>
+</head>
+<body class="light-mode">
+  <button class="toggle" onclick="toggleMode()">
+    <i class="moon-icon fa-solid fa-moon"></i>
+    <i class="sun-icon fa-solid fa-sun"></i>
+  </button>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode', 'dark');
+      } else {
+        body.classList.remove('dark-mode', 'dark');
+        body.classList.add('light-mode');
+      }
+    }
+  </script>
+</body>
+</html>
